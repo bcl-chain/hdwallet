@@ -13,6 +13,10 @@ type Account struct {
 	account *accounts.Account
 }
 
+func NewMnemonic(bits int) (string, error) {
+	return native.NewMnemonic(bits)
+}
+
 func NewFromMnemonic(mnemonic string) (*Wallet, error) {
 	wallet, err := native.NewFromMnemonic(mnemonic)
 	if err != nil {
