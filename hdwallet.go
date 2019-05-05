@@ -30,6 +30,10 @@ func (w *Wallet) Derive(path string, pin bool) (*Account, error) {
 	return &Account{&account}, nil
 }
 
+func (w *Wallet) AddressHex(account *Account) (string, error) {
+	return w.wallet.AddressHex(*account.account)
+}
+
 func (w *Wallet) PrivateKeyHex(account *Account) (string, error) {
 	return w.wallet.PrivateKeyHex(*account.account)
 }
